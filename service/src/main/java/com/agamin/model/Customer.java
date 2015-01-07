@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Customer implements Serializable{
 
-	//Serialize
+	
 	private static final long serialVersionUID = 1L;
 	private Double customerid;
 	private String city;
