@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.agamin.builder.MenuBuilder;
-import com.agamin.cache.MenuCache;
 import com.agamin.model.MenuModel;
 
 @Component
@@ -17,7 +16,7 @@ public class MenuLoader {
 	@Autowired
 	private MenuBuilder menuBuilder;
 	
-	private MenuCache menuCache;
+	//private MenuCache menuCache;
 	
 	@PostConstruct
 	public void load() {
