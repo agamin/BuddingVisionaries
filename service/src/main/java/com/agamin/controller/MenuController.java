@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.agamin.model.MenuModel;
+import com.agamin.model.Menu;
 import com.agamin.service.MenuService;
 
 @Controller
@@ -22,7 +22,7 @@ public class MenuController {
 	
 	@RequestMapping(value="/getAllMenu", method=RequestMethod.GET)
 	@ResponseBody
-	public Map<String, MenuModel> reloadDealerInfo(@PathVariable String restaurantCode) {
+	public Map<String, Menu> reloadDealerInfo(@PathVariable String restaurantCode) {
 		return service.getMenu(restaurantCode);
 	}
 

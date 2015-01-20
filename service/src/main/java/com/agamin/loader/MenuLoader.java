@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.agamin.builder.MenuBuilder;
 import com.agamin.cache.AgaminCache;
 import com.agamin.cache.CacheFactory;
-import com.agamin.model.MenuModel;
+import com.agamin.model.Menu;
 
 @Component
 public class MenuLoader {
@@ -25,10 +25,10 @@ public class MenuLoader {
 	
 	@PostConstruct
 	public void load() {
-		AgaminCache<String, Map<String, MenuModel>> menuCache = cacheFactory.getMenuCache();
-		List<MenuModel> menus = menuBuilder.getAllMenu();
-		for (MenuModel menu : menus) {
-			menuCache.put("ReataurantId", new HashMap<String, MenuModel>());//Change
+		AgaminCache<String, Map<String, Menu>> menuCache = cacheFactory.getMenuCache();
+		List<Menu> menus = menuBuilder.getAllMenu();
+		for (Menu menu : menus) {
+			menuCache.put("ReataurantId", new HashMap<String, Menu>());//Change
 		}
 		
 	}
