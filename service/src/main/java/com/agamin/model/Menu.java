@@ -7,7 +7,8 @@ import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
-
+import org.springframework.data.cassandra.mapping.Table;
+@Table
 public class Menu {
     @PrimaryKey
 	private PrimaryKeyClass primaryKey;
