@@ -1,8 +1,10 @@
 package com.agamin.dao;
 
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -22,9 +24,9 @@ import org.springframework.data.cassandra.repository.config.EnableCassandraRepos
 @Configuration
 @PropertySource(value = { "classpath:cassandra.properties" })
 @EnableCassandraRepositories(basePackages = { "org.spring.cassandra.example.repo" })
-public class DBConnection {
+public class DBConnection implements ApplicationContextAware{
 
-  static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("DBConnection-context.xml");
+  private ApplicationContext applicationContext ;//= new ClassPathXmlApplicationContext("DBConnection-context.xml");
 
   @Autowired
   private Environment env;
@@ -69,5 +71,11 @@ public class DBConnection {
   public CassandraOperations getConnection(){
 	  return applicationContext.getBean("cassandraTemplate", CassandraOperations.class);
   }
+
+public void setApplicationContext(ApplicationContext context)
+		throws BeansException {
+	applicationContext = context;
+	
+}
   
 }

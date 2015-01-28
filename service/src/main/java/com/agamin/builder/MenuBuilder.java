@@ -17,8 +17,8 @@ public class MenuBuilder {
 
 	public List<Menu> getAllMenu() {
 		//Get the menus from DAO.
-		// testing for commit anuj
 		List<Menu> menus = new ArrayList<Menu>();
+		menuDao.getMenu();
 		Menu menu = new Menu();
 		menu.setName("ice-cream");
 		menus.add(menu);
