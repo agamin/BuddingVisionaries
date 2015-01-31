@@ -129,11 +129,7 @@ public class Menu {
 			 result = result + id;
 			 result = result + (( restaurantCode == null )? 0 : restaurantCode.hashCode());
 			 return result;
-		   /* final int prime = 31;
-		    int result = 1;
-		    result = prime * result + ((eventTime == null) ? 0 : eventTime.hashCode());
-		    result = prime * result + ((personId == null) ? 0 : personId.hashCode());
-		    return result;*/
+		 
 		  }
 
 		  @Override
