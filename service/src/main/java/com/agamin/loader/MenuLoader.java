@@ -23,7 +23,7 @@ public class MenuLoader {
 	@Autowired
 	private CacheFactory cacheFactory;
 	
-	@PostConstruct
+	//@PostConstruct
 	public void load() {
 		AgaminCache<String, Map<String, Menu>> menuCache = cacheFactory.getMenuCache();
 		List<Menu> menus = menuBuilder.getAllMenu();

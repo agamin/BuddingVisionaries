@@ -10,6 +10,12 @@ import com.agamin.dao.MenuDAO;
 import com.agamin.model.Menu;
 
 @Component
+@Deprecated
+/**
+ * 
+ * This class is not required. Use Dao directly instead;
+ *
+ */
 public class MenuBuilder {
 
 	@Autowired
