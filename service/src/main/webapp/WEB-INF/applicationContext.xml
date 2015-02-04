@@ -29,8 +29,9 @@
     http://www.springframework.org/schema/task/spring-task-3.1.xsd
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
- 	   	<import resource="/DBConnection-context.xml" /> 
-       	<import resource="/applicationContextSecurity.xml" />
+ 	   	
+ 	<import resource="/DBConnection-context.xml" /> 
+    <import resource="/applicationContextSecurity.xml" />
        	
 	<context:annotation-config />
 	<mvc:annotation-driven />
@@ -42,8 +43,6 @@
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
 		<property name="cacheManager" ref="ehcacheCacheManager" />
 	</bean>
-    
-    <mvc:annotation-driven/>
 	<context:component-scan base-package="com.agamin"/>
 
 </beans>
