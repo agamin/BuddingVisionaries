@@ -32,6 +32,7 @@
    <import resource="/DBConnection-context.xml" />  
        	
 	<context:annotation-config />
+	<mvc:annotation-driven />
     <bean id="ehcacheCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" >
 		<property name="configLocation" value="/WEB-INF/ehcache.xml" />
 		<property name="shared" value="true" />
