@@ -1,6 +1,8 @@
 package com.agamin.model;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.Table;
@@ -10,23 +12,32 @@ public class Customer implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	@PrimaryKey
-	private Double customerid;
+	private UUID customerid;
 	private String city;
 	private String country;
 	private String first_name;
 	private String last_name;
 	private String email;
-	private Double mobile;
+	private String mobile;
 	private int pin;
 	private String state;
 	private String street;
+	private List<String> orders;
 
-	public Double getCustomerid() {
+	public List<String> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<String> orders) {
+		this.orders = orders;
+	}
+	
+	public UUID getCustomerid() {
 		return customerid;
 	}
-	public void setCustomerid(Double customerid) {
+	public void setCustomerid(UUID customerid) {
 		this.customerid = customerid;
 	}
+	
 	public String getCity() {
 		return city;
 	}
@@ -71,10 +82,10 @@ public class Customer implements Serializable{
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}
-	public Double getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(Double mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	public String getEmail() {

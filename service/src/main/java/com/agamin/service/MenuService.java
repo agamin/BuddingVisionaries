@@ -28,15 +28,18 @@ public class MenuService {
 	}
 
 	public Customer getCustomer(Customer customer) {
-		
+		Customer result = null;
 		if(isNotBlank(customer.getEmail())) {
-			return menuDao.getCustomer(customer.getEmail());
+			result = menuDao.getCustomerForEmail(customer.getEmail());
 		}
-		if(customer.getMobile() != null && customer.getMobile().doubleValue() > 0) {
-			return menuDao.getCustomer(customer.getMobile());
+		else if(isNotBlank(customer.getMobile())) {
+			result = menuDao.getCustomerForMobile(customer.getMobile());
 		}
-		menuDao.addCustomer(customer);
-		return customer;
+		if(result == null) {
+			menuDao.addCustomer(customer);
+			result= customer;
+		}
+		return result;
 	}
 
 }
