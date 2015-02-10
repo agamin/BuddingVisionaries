@@ -1,6 +1,6 @@
 package com.agamin.service;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +19,8 @@ public class MenuService {
 	@Autowired
 	private MenuDAO menuDao;
 	
-	public Map<String, Menu> getMenu(String restaurantCode) {
-		AgaminCache<String, Map<String, Menu>> menuCache = cacheFactory.getMenuCache();
+	public List<Menu> getMenu(String restaurantCode) {
+		AgaminCache<String, List<Menu>> menuCache = cacheFactory.getMenuCache();
 		return menuCache.get(restaurantCode);
 	}
 

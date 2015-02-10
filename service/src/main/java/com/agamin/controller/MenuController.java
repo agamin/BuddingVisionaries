@@ -1,6 +1,6 @@
 package com.agamin.controller;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,9 +19,9 @@ public class MenuController {
 	@Autowired
 	private MenuService service;
 	
-	@RequestMapping(value="/getAllMenu", method=RequestMethod.GET)
+	@RequestMapping(value="/getMenu/{restaurantCode}", method=RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Menu> reloadDealerInfo(@PathVariable String restaurantCode) {
+	public List<Menu> reloadDealerInfo(@PathVariable String restaurantCode) {
 		return service.getMenu(restaurantCode);
 	}
 	
