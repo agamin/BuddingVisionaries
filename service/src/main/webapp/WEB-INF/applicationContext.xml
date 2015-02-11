@@ -32,6 +32,7 @@
  	   	
  	<import resource="/DBConnection-context.xml" /> 
     <import resource="/applicationContextSecurity.xml" />
+    <!-- <import resource="/Oauth.xml" /> -->
        	
 	<context:annotation-config />
 	<mvc:annotation-driven />
