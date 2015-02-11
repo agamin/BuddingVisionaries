@@ -1,6 +1,6 @@
 package com.agamin.cache;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
@@ -17,12 +17,12 @@ public class CacheFactory {
 	@Autowired
 	private CacheManager cacheManager;
 	
-	private AgaminCache<String, Map<String, Menu>> menuCache;
+	private AgaminCache<String, List<Menu>> menuCache;
 	
-	public AgaminCache<String, Map<String, Menu>> getMenuCache() {
+	public AgaminCache<String, List<Menu>> getMenuCache() {
 		if(menuCache == null) {
 			Cache cache = cacheManager.getCache(MENU_CACHE_NAME);
-			menuCache = new AgaminCache<String, Map<String,Menu>>(cache);
+			menuCache = new AgaminCache<String, List<Menu>>(cache);
 		}
 		return menuCache;
 	}
