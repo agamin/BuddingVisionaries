@@ -36,4 +36,18 @@ public class MenuDAO {
 		
 		return menuMap;
 	}
+	
+	public void insertMenuItem(List<Menu> menuItems) {
+	//	String insertQuery = "insert into menu (restaurant_code, id, category, chillyrating, cuisine, description, mealtype, name, picture, price, tag, veg) values (?, ?, ?, ?, ? , ?, ?, ?, ?, ?, ?, ?)";
+	//	List<List<?>> menu = new ArrayList<List<?>>();
+	//	menu.add(menuItems);
+	//	template.ingest(insertQuery, menu);
+		template.insert(menuItems);
+	}
+	public void updateMenuItem(List<Menu> menuItems) {
+			template.update(menuItems);
+		}
+	/*public void deleteMenuItem(List<Menu> menuItems) {
+		template.delete(menuItems);
+	}*/
 }
