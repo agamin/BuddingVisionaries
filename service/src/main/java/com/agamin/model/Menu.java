@@ -2,31 +2,34 @@ package com.agamin.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
+import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKey;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
 
 @Table
 public class Menu implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
+	
 	@PrimaryKey
 	private PrimaryKeyClass primaryKey;
 	private String category;
 	private int chillyRating;
 	private String cuisine;
 	private String description;
-	private List<String> mealType;
+	private String mealType;
 	private String name;
-	private String picture;
+	private List<UUID> image;
 	private Double price;
-	private List<String> tag;
+	private String tag;
 	private String veg;
+	@Column(value="branch_code")
+	private String branchCode;
 
 	public PrimaryKeyClass getPrimaryKey() {
 		return primaryKey;
@@ -68,14 +71,6 @@ public class Menu implements Serializable{
 		this.description = description;
 	}
 
-	public List<String> getMealType() {
-		return mealType;
-	}
-
-	public void setMealType(List<String> mealType) {
-		this.mealType = mealType;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -84,12 +79,12 @@ public class Menu implements Serializable{
 		this.name = name;
 	}
 
-	public String getPicture() {
-		return picture;
+	public List<UUID> getImage() {
+		return image;
 	}
 
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setImage(List<UUID> image) {
+		this.image = image;
 	}
 
 	public Double getPrice() {
@@ -100,12 +95,28 @@ public class Menu implements Serializable{
 		this.price = price;
 	}
 
-	public List<String> getTag() {
+	public String getMealType() {
+		return mealType;
+	}
+
+	public void setMealType(String mealType) {
+		this.mealType = mealType;
+	}
+
+	public String getTag() {
 		return tag;
 	}
 
-	public void setTag(List<String> tag) {
+	public void setTag(String tag) {
 		this.tag = tag;
+	}
+
+	public String getBranchCode() {
+		return branchCode;
+	}
+
+	public void setBranchCode(String branchCode) {
+		this.branchCode = branchCode;
 	}
 
 	public String getVeg() {
