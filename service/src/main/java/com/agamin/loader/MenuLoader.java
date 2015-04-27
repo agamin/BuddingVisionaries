@@ -25,7 +25,7 @@ public class MenuLoader {
 	@PostConstruct
 	public void load() {
 		
-		Map<String, List<Menu>> menus = menuDao.getAllMenu();
+		//Map<String, List<Menu>> menus = menuDao.getAllMenu();
 		AgaminCache<String, List<Menu>> menuCache = cacheFactory.getMenuCache();
 		Map<String, List<Menu>> menuMap = menuDao.getAllMenu();
 		for (String restaurantCode : menuMap.keySet()) {

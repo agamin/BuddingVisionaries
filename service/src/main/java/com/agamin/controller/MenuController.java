@@ -52,15 +52,12 @@ public class MenuController {
     @RequestMapping(value = "/getMenu/addBulkItem", method = RequestMethod.POST)
     @ResponseBody
     public  String addBulkItem(@RequestParam("file") MultipartFile file) {
-    	
     	if(file.isEmpty()){
     		return "fail";
     	}
     	String str = file.getName();
-    	
-        return "test    " + str    ;
+        return service.bulkAddition(str);
     }
-	
     
 	@RequestMapping(value="/status", method=RequestMethod.GET)
 	@ResponseBody

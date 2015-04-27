@@ -26,7 +26,6 @@ public class MenuService {
 	}
 
 	public String addItem(Menu[] menuItems) {
-		// TODO Auto-generated method stub
 		List<Menu> items = menuItems != null ? Arrays.asList(menuItems) : null;
 		if (validateMenuItem(items)) {
 			menuDao.insertMenuItem(items);
@@ -35,8 +34,8 @@ public class MenuService {
 			return "fail";
 		}
 	}
-
-	private boolean validateMenuItem(List<Menu> items) {
+	
+	protected boolean validateMenuItem(List<Menu> items) {
 		if (items != null && items.size() > 0) {
 			return true;
 		}
@@ -57,6 +56,10 @@ public class MenuService {
 		} else {
 			return "fail";
 		}
+	}
+
+	public String bulkAddition(String str) {
+        return "test    " + str    ;
 	}
 
 	/*public String deleteItem(Menu[] menuItems) {
